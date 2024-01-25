@@ -36,7 +36,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.v4l2_codec2.decode_concurrent_instances=4 \
     ro.hdmi.device_type=4 \
     wifi.interface=wlan0 \
-    ro.rfkilldisabled=1
+    ro.rfkilldisabled=1 \
+    bmw.workshop=1
 
 PRODUCT_SOONG_NAMESPACES += external/v4l2_codec2
 
@@ -65,6 +66,13 @@ PRODUCT_PACKAGES += \
     wpa_supplicant.conf \
     hostapd \
     libbt-vendor
+
+# AOSP training specific packages
+PRODUCT_PACKAGES += \
+    i2cdetect \
+    i2cdump \
+    i2cget \
+    i2cset
 
 # graphics hal
 PRODUCT_PACKAGES += \
@@ -162,3 +170,4 @@ PRODUCT_AAPT_PREF_CONFIG := tvdpi
 PRODUCT_CHARACTERISTICS := tv
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
+$(call inherit-product, device/arpi/rpi4/light/arpi-lights.mk)

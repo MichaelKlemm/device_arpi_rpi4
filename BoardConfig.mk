@@ -74,4 +74,8 @@ BOARD_CUSTOM_BT_CONFIG := device/arpi/rpi4/bluetooth/vnd_rpi4.txt
 BOARD_SEPOLICY_DIRS := \
     device/arpi/rpi4/sepolicy
 
+vendor_lkm_dir := device/arpi/rpi4/lkms
+BOARD_VENDOR_KERNEL_MODULES := \
+    $(vendor_lkm_dir)/i2c-dev.ko
+
 DEVICE_MANIFEST_FILE := device/arpi/rpi4/manifest.xml

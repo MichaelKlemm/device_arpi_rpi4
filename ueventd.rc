@@ -6,3 +6,8 @@
 /dev/video1               0660   system     camera
 /dev/video10              0660   media      media
 /dev/dma_heap/linux,cma   0666   system     graphics
+
+/sys/class/leds/led* brightness 0666 system system
+/sys/class/leds/led* trigger 0666 system    system
+
+/dev/i2c-*                0666   system     system
